@@ -1,0 +1,108 @@
+buildscript {
+	dependencies {
+		classpath 'org.asciidoctor:asciidoctorj-pdf:1.5.0-alpha.8'
+		classpath 'org.ysb33r.gradle:vfs-gradle-plugin:1.0-beta1'
+		classpath 'commons-httpclient:commons-httpclient:3.1'
+	}
+}
+
+plugins {
+	id 'org.ajoberstar.github-pages' version '1.4.2'
+	id 'org.asciidoctor.gradle.asciidoctor' version '1.5.1'
+	id 'org.asciidoctor.convert' version '1.5.2'
+	id 'com.github.jruby-gradle.base' version '0.1.5'
+}
+
+apply plugin: 'com.github.jruby-gradle.base'
+apply plugin: 'org.ysb33r.vfs'
+apply plugin: 'java'
+apply plugin: 'org.asciidoctor.convert'
+
+githubPages {
+  repoUri = 'https://github.com/shearer12345/talk_griffithADGHackathon.git' // Set this to the destination repo
+
+  credentials {
+    username = project.hasProperty('githubToken') ? project.githubToken : ''
+    password = ''
+  }
+
+  pages {
+    from file(asciidoctor.outputDir.path + '/html5')
+  }
+}
+
+version = '1.0.0-SNAPSHOT'
+
+ext {
+	revealjsVersion = '3.1.0'
+	asciidoctorBackendVersion = 'master'
+	downloadDir = new File(buildDir,'download')
+	templateDir = new File(downloadDir,'templates')
+	revealjsDir   = new File(downloadDir,'reveal.js')
+}
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    gems 'rubygems:slim:2.1.0'
+    gems 'rubygems:thread_safe:0.3.4'
+}
+
+task download << {
+	mkdir downloadDir
+	vfs {
+		cp "zip:https://github.com/asciidoctor/asciidoctor-reveal.js/archive/${asciidoctorBackendVersion}.zip!asciidoctor-reveal.js-${asciidoctorBackendVersion}",
+				templateDir, recursive:true, overwrite:true
+		cp "zip:https://github.com/hakimel/reveal.js/archive/${revealjsVersion}.zip!reveal.js-${revealjsVersion}",
+                revealjsDir, recursive:true, overwrite:true
+	}
+}
+
+download {
+	description "Download extra revealjs resources"
+	outputs.dir templateDir
+	outputs.dir revealjsDir
+}
+
+asciidoctor {
+
+	dependsOn jrubyPrepareGems
+
+	sources {
+			include '*.asciidoc'
+		}
+
+	resources {
+		from (sourceDir) {
+			include 'images/**'
+		}
+		from (downloadDir) {
+			include 'reveal.js/**'
+		}
+	}
+
+    backends 'html5', 'pdf'//, 'revealjs'
+    attributes	'build-gradle': file('build.gradle'),
+				'sourcedir': project.sourceSets.main.java.srcDirs[0],
+				'endpoint-url': 'http://example.org',
+				'source-highlighter' : 'coderay',
+				'imagesdir':'./images',
+				'toc':'left',
+				'icons': 'font',
+				'setanchors':'true',
+				'idprefix':'',
+				'idseparator':'-',
+				'docinfo1':'true',
+				'revealjs_theme':'black',
+				'revealjs_transition':'linear',
+				'revealjs_history':'true',
+				'revealjs_slideNumber':'true'
+
+	options template_dirs : [new File(templateDir,'templates/slim').absolutePath ]
+
+	dependsOn download
+}
+
+publishGhPages.dependsOn asciidoctor

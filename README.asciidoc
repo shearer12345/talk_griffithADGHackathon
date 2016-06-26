@@ -1,0 +1,3 @@
+= Talk for intro to Art/Technology/Good Hackathon, organised by Griffith Film School, hosted at the Edge
+
+* hosted online at http://shearer12345.github.io/talk_griffithADGHackathon
