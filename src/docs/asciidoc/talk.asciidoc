@@ -1,4 +1,18 @@
 = Art/Technology/Good Hackathon
+John Shearer <shearer12345@gmail.com>
+
+== A tiny bit about menu
+
+image::images/shearerPhoto01.png[]
+
+== A tiny bit about some previous hackathons
+
+== What is a Hackathon?
+
+== Our focus / theme
+
+== Processes and Practicalilties
+
 
 
 == Notes
