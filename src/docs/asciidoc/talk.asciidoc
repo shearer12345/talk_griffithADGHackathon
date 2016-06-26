@@ -1,18 +1,95 @@
-= Art/Technology/Good Hackathon
+= Art - Technology - Good Hackathon
 John Shearer <shearer12345@gmail.com>
 
-== A tiny bit about menu
+== A tiny bit about me
 
-image::images/shearerPhoto01.png[]
+image::shearerPhoto01.png[height=600]
+
+=== intLab
+
+* Interactive Technologies Lab <Lincoln>
+  ** http://intlab.lincoln.ac.uk/
+
+=== openLab / Culture Lab
+
+* https://openlab.ncl.ac.uk/
+  ** PhD
+  ** ++
+
+=== humanaqurium
+
+image::humanaquarium.png[height=600]
+
+=== nightingallery
+
+image::nightingallery.png[height=600]
+
 
 == A tiny bit about some previous hackathons
 
+* the kinds of relationships that our Hackathons have created and work that they've led to
+
 == What is a Hackathon?
+
+=== Philosophy
+
+* Fundamentally about relationships
+* Building things is only one of many outputs
+  ** new ideas
+  ** new collaborations
+  ** new skills/techniques
+  ** ..
+
+=== Technology as tools
+
+* technology as tools and tools for expression, rather than ends in themselves
+  ** walk through idea testing for storyTrails/Droplets
+  ** just used a mobile phone - WoZ
+  ** what kinds of outputs are appropriate
+
+=== What do you want to get out of this?
+
+* ???
 
 == Our focus / theme
 
+* putting the user first
+  ** user experience led
+  ** also exploring cultural and creative ideas - putting technology in the service of that, in the design process
+
+=== themes - perhaps Art; Techonlogy; Social Change/Good
+
+* what present in your minds now (whatever now means)
+* things you've seen or heard of recently
+
+=== interests?
+
+* what you are interested in, generally, rather than what you are working on right now
+  ** the wider set of things you're interested in - the 50+ list
+
+=== summary
+
+* how you can use creative practices and engagement with technologies to create positive social impact
+  ** where do you think you can create positive social impact?
+  ** brings it back to the "user", then ask how
+
 == Processes and Practicalilties
 
+=== Ideation and idea selection
+
+* a big part of the process
+* always a challenge with a variety of people
+  ** especially when we don't really know each other
+  ** (though that's half the point)
+
+=== Suggested approach
+
+. Talk a bunch during morning Tea
+  ** trying to find ideas of interest between people
+. Write loosely formed ideas on paper
+  ** unfiltered
+. Go around and mark ideas you find interesting
+. Vote with our feet
 
 
 == Notes
