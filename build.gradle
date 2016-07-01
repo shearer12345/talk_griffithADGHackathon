@@ -3,12 +3,12 @@ buildscript {
 		classpath 'org.asciidoctor:asciidoctorj-pdf:1.5.0-alpha.11'
 		classpath 'org.ysb33r.gradle:vfs-gradle-plugin:1.0-beta1'
 		classpath 'commons-httpclient:commons-httpclient:3.1'
+		classpath 'org.asciidoctor:asciidoctor-gradle-plugin:1.5.3'
 	}
 }
 
 plugins {
 	id 'org.ajoberstar.github-pages' version '1.4.2'
-	id 'org.asciidoctor.gradle.asciidoctor' version '1.5.1'
 	id 'org.asciidoctor.convert' version '1.5.2'
 	id 'com.github.jruby-gradle.base' version '0.1.5'
 }
